@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+}
+
+body {
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #fff ;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #30004c;
+    animation: show 1s ease forwards;
+    animation-delay: .4s;   
+}
+
+.navbar {
+    display: none;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none ;
+    font-weight: 500;
+    margin-left: 35px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+.home {
+    min-height: 100vh;
+    background-color: #30004c;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    flex-direction: column;
+}
+
+.home-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.home-content h1 {
+    font-size: 50
+px;
+    font-weight: 700;
+    line-height: 1.2;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.home-content h1::before, 
+.home-content h3::before,
+.home-content p::before,
+.btn-box::before,
+.home-sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #30004c;
+    animation: show 1s ease forwards;
+}
+
+.home-content h1::before {
+    animation-delay: 1s;
+}
+
+.home-content h3 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #00abf0;
+    position: relative;
+    margin-bottom: 20px;
+    animation: floatAnimation 3s ease-in-out infinite;
+
+}
+
+.home-content h3::before {
+    animation-delay: 1.3s;
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+    text-align: center;
+}
+
+.home-content p::before {
+    animation-delay: 1.6s; 
+}
+
+.image {
+    margin-bottom: 20px;
+    text-align: center; /* Centrar la imagen en dispositivos móviles */
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Agregamos un borde redondeado opcional */
+   margin-top: 100px;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btn-box a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: .5s;
+    position: relative;
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+.btn-box a:hover {
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover {
+    color: #00abf0;
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #220334;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    position: relative;
+}
+
+.home-sci a:hover {
+    color: #30004c;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #fff;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-imghover {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 500px;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+    pointer-events: none;
+}
+
+.home-imghover:hover {
+    background: #30004c;
+    opacity: .8;
+}
+
+.home-imghover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120%;
+    height: 100%;
+    background: #30004c;
+    animation: show 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 100;
+}
+
+.hidden {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #30004c;
+}
+
+.nav-icon {
+    z-index: 999;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translate(0, 0); /* Empieza en la posición original */
+    }
+    50% {
+        transform: translate(0, -20px); /* Se eleva 10px hacia arriba a la mitad de la animación */
+    }
+    100% {
+        transform: translate(0, 0); /* Vuelve a la posición original */
+    }
+}
+
+
+@keyframes show {
+    100% {
+        width: 0;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .header svg {
+        display: none;
+    }
+    .navbar {
+        display: flex;
+    }
+    .home {
+        flex-direction: row;
+        padding: 0 15%;
+        align-items: center;
+    }
+    .image {
+        text-align: center; /* Alinear la imagen al centro en pantallas grandes */
+        flex: 1;
+        margin-right: 0px;
+    }
+    .home-content {
+        max-width: 100%;
+        text-align:center; /* Alinear el contenido al centro */
+        margin-top: 100px;
+    }
+    .home-sci {
+        position: static;
+        margin-top: 20px;
+    }
+    .home-imghover {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .home {
+        background-image: url(../imagenes/fondo_mobile.png);
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-content {
+        margin-top: 100px;
+        padding: 0 5%;
+        text-align: center;
+    }
+    .image {
+        margin-bottom: 20px;
+        text-align: center; /* Centrar la imagen en dispositivos móviles */
+    }
+    .home-sci {
+        width: 100%;
+        bottom: 5%;
+        position:stat ;
+    }
+    .home-imghover {
+        right: 5%;
+        width: 100%;
+    }
+}
